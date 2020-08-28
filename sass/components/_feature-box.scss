@@ -6,10 +6,11 @@
     background-color: rgba($color-white, .8);
     text-align: center;
     transition: transform .3s ;
-    backface-visibility: hidden;
+    
     &__icon{
         font-size: 6rem;
         background-image: linear-gradient(to right ,$color-primary-light, $color-primary-dark);
+        background-clip: text;
         -webkit-background-clip: text;
         color: transparent ;
         display: inline-block;
