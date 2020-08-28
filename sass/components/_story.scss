@@ -1,0 +1,69 @@
+.story{
+    width: 75%;
+    background-color: rgba($color-white, .6);
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    margin: 0 auto;
+    border-radius: 3px;
+    padding: 5rem;
+    padding-left: 8rem;
+    font-size: $deafult-font-size;
+    transform: skewX(-12deg);
+
+    @include respond(tab-port){
+        width: 95%;
+    }
+    @include respond(phone){
+        width: 100%;
+        padding: 5rem;
+        transform: skewX(0);
+    }
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg); 
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);       
+        position: relative;   
+        
+
+        @include respond(phone){
+            transform: translateX(-3rem) skewX(0);
+        }
+        
+    }
+    &__img{
+        height: 100%;
+        transform: scale(1.4) translateX(-3rem);
+        transition: all .3s;
+        @include respond(phone){
+        }
+    }
+    &__text{
+
+    }
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        opacity: 0;
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 300;
+        color: $color-white;
+        transition: all .3s;
+        text-transform: uppercase;
+    }
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    &:hover &__img{
+        transform: scale(1) translateX(-3rem);
+        filter: blur(3px) brightness(80%);
+
+    }
+}
